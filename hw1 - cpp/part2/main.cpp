@@ -10,6 +10,7 @@ int main(void)
 	while(true)
 	{
 		execution exe = read_line();
+		//debug_print(exe);
 		run(exe);
 		reset_exe(exe);
 	}

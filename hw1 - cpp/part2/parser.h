@@ -24,6 +24,8 @@ typedef struct _execution
 	vector<command*> cmd;
 	vector<char> oper;
 	bool bg;
+	string outfile;
+	string infile;
 } execution;
 
 void welcome_print(void);
