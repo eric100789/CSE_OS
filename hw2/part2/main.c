@@ -1,6 +1,7 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #define N 5
 #define LEFT (i + N - 1) % N
