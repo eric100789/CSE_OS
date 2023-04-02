@@ -46,7 +46,7 @@ T / (T + (T/Q)*S) lim Q->0
 
 
 ## Question 3
-use ```pthread`` to achieve:
+use ```pthread``` to achieve:
 
 ```c
 pthread_t mailbox_A, mailbox_B;
