@@ -51,7 +51,7 @@ use ```pthread`` to achieve:
 ```c
 pthread_t mailbox_A, mailbox_B;
 ```
-the messages can be received by ``mailbox_A``` and ```mailbox_B``` individually.
+the messages can be received by ```mailbox_A``` and ```mailbox_B``` individually.
 	
 
 ## Question 4
