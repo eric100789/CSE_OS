@@ -15,10 +15,10 @@ enter_region:
 
 	jr $ra
 ```
-- 1. enter_region
-- 2. make ```$REG``` to 1
-- 3. ~ 5. swap
-- 6. if locked back to enter_region
+- 1\. enter_region
+- 2\. make ```$REG``` to 1
+- 3\. ~ 5. swap
+- 6\. if locked back to enter_region
 
 ## Question 2
 
