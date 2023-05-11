@@ -1,28 +1,12 @@
-#ifndef PARSER_H
-#define PARSER_H
+#ifndef SHELL_H
+#define SHELL_H
 
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include "parser.h"
 
-#define RL_BUFFER_SIZE 64
+static void reply_error(string message);
 
-typedef struct _command
-{
-	char ** argv;
-	int par;
-}command;
+void run(execution exe);
 
-static void exception(char * message);
-
-void free_cmd(command * cmd);
-
-command* read_line(void);
-
-void run (command * cmd);
+void reset_exe(execution & exe);
 
 #endif
