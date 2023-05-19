@@ -21,19 +21,20 @@ void *p;
 
 int main()
 {
-	if (signal(SIGCONT, sigcont) == SIG_ERR || signal(SIGQUIT, sigquit) == SIG_ERR) exit(0);
+	if (signal(SIGCONT, sigcont) == SIG_ERR) return 0;
 
 	int pid = fork();
 	
 	if(pid > 0)
 	{
+		signal(SIGINT, sigquit);
 		fd = open("text.txt", 'r');
 		p = mmap(NULL, getpagesize(), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 		
 		char *ptr = (char *)p;
 		size_t cnum = 0;
 		printf("When user enter \'\\n\', text.txt will be changed:\n");
-		printf("\t---------Write something---------\n");
+		printf("---------Write something---------\n");
 		while (~scanf("%[^\n]s", str))
 		{
 			getchar();
@@ -76,7 +77,7 @@ int main()
 		if (p == (void *)-1)
 		{
 			printf("MAPPING ERROR\n");
-			exit(0);
+			return 0;;
 		}
 
 		close(fd);
@@ -85,16 +86,22 @@ int main()
 	else
 	{
 		printf("FORK ERROR\n");
-		exit(0);
+		return 0;;
 	}
 }
 
 void sigcont(int sig)
 {
+	system("clear");
+	printf("---------Something is read---------\n");
 	memcpy(str, p, getpagesize());
+	printf("READ:\n%s",str);
+	printf("---------Write something---------\n");
 }
 void sigquit(int sig)
 {
+	printf("\nunmapped, waiting for exit...\n");
+	sleep(1);
 	munmap(p, getpagesize());
 	exit(0);
 }
