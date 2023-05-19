@@ -33,4 +33,46 @@ Hard link has no space and time cost, compared to symbolic link.
 
 ## Question 4
 
+### a
+
+contiguous: 201
+linked: 1
+indexed: 1
+
+### b
+
+contiguous: 101
+linked: 52
+indexed: 1
+
+### c
+
+contiguous: 1
+linked: 3
+indexed: 1
+
+### d
+
+contiguous: 0
+linked: 1
+indexed: 0
+
+### e
+
+contiguous: 98
+linked: 52
+indexed: 0
+
 ## Question 5
+
+1. make 11123456 into binary(or hex): 0b0000 0000 1010 1001 1011 1011 0000 0000 
+2. the highest 20 bits is the index of page table.
+3. the lowest 12 bits is the offset of physical page.
+
+### Hardware
+address transform (dynamically)
+
+### Software
+page IO
+
+
